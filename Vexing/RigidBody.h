@@ -6,20 +6,17 @@ class RigidBody :
 	public sf::Sprite
 {
 private:
-	static int bodyID;
-	static std::map<int, RigidBody*> object_list;
-	int selfID;
-
 	float gravity;
 public:
 	bool is_static;
 
 	// Constructor
 	RigidBody();
-	//Deconstructer
-	~RigidBody();
 
 	// Methods
 	void update(sf::Time dt);
+	void update(sf::Time dt, std::vector<RigidBody> collision_objects);
+
+	bool on_floor(std::vector<RigidBody> collision_objects);
 };
 

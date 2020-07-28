@@ -12,9 +12,13 @@ int main()
     // Stores the delta time between frames
     sf::Time elapsed;
 
+    // Stores object vecotrs for collision
+    std::vector<RigidBody> platform_vector;
+
     // Some test objects
     Platform test_platform(sf::Vector2f(300.f, 300.f));
-    Player test_player(sf::Vector2f(300.f, 200.f));
+    platform_vector.push_back(test_platform);
+    Player test_player(sf::Vector2f(300.f, 100.f));
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -32,7 +36,7 @@ int main()
         
         // Updates all objects
         test_platform.update(elapsed);
-        test_player.update(elapsed);
+        test_player.update(elapsed, platform_vector);
 
         window.clear(sf::Color::Black);
 

@@ -4,7 +4,8 @@
 Player::Player(sf::Vector2f position)
 {
     // Sets up the sprite texture
-    if (!player_texture.loadFromFile("Images/Player.png")) {
+    if (!player_texture.loadFromFile("Images/Player.png")) 
+    {
         std::cout << "Error loading texture";
     }
     player_texture.setSmooth(true);
